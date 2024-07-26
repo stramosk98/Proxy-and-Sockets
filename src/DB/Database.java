@@ -37,16 +37,11 @@ public class Database {
 		
 		if(connection != null) {
 			try {
-//	            Statement statement = connection.getConnection().createStatement();
-
 	            String sql = "SELECT * FROM " + name + ".produtos WHERE idProduto = " + id;
 	            PreparedStatement preparedStatement = connection.getConnection().prepareStatement(sql);
-//	            preparedStatement.setInt(1, parseInt(id));
 
-	            // Executar a consulta
 	            ResultSet resultSet = preparedStatement.executeQuery();
 
-	            // Processar o resultado
 	            String resultado = "";
 	            if (resultSet.next()) {
 	                resultado = "ID: " + resultSet.getString("idProduto") + ", ";
