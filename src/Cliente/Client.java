@@ -16,6 +16,9 @@ public class Client {
             String id = "2";
             saida.writeUTF(id);
             saida.flush();
+
+	   String resposta = entrada.readUTF();
+	   System.out.println("Dados: " + resposta); 
             
             entrada.close();
             saida.close();
